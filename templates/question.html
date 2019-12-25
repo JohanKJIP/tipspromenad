@@ -10,8 +10,9 @@
 <img src="{{url_for('static', filename=media)}}" class="image"> 
 {% else %}
 <audio id="musicTesting" preload="auto" controls>  
-    <source src="{{ url_for('static', filename=media) }}" type="audio/wav" />
+    <source src="{{ url_for('static', filename=media) }}" type="audio/mp3" />
 </audio>
+<p style="font-size: 14px; font-style: italic;">OBS. Klicka på spel-knappen, kan ta några sekunder att starta.</p>
 {% endif %}
 {% endif %}
 <p>{{meta}}</p>

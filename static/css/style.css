@@ -72,6 +72,10 @@ p {
   background-color: #5d5bff
 }
 
+.question-choice:hover {
+  background-color: #5d5bff
+}
+
 input {
   border: none;
   outline: none;

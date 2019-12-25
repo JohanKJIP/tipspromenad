@@ -111,6 +111,7 @@ def show_results():
             print(question_answer)
             if (answer.answer == question_answer.answer):
                 correct += 1 
+        # ugly
         if (correct >= first_score):
             third = second
             third_score = second_score
@@ -118,6 +119,16 @@ def show_results():
             second_score = first_score
             first = user
             first_score = correct
+        else:
+            if (correct >= second_score):
+                third = second
+                third_score = second_score
+                second = user
+                second_score = correct
+            else:
+                if (correct >= third_score):
+                    third_score = correct
+                    third = user
 
         if (user.user_id == user_id):
             team_name = user.team_name
