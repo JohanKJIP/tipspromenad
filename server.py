@@ -58,9 +58,12 @@ def show_question(question_id):
         user = db.query(User).filter_by(user_id=user_id).first() 
         if (user_id != None and user != None):
             if (question != None):
+                media = question.media
+                media_type = media.split("/")[0].replace(" ", "")
+                print(media_type)
                 return render_template('question.html', user_id=user_id, team_name=user.team_name, question_id=question.question_id, 
                     meta=question.meta, media=question.media, choice1=question.choice1, choice2=question.choice2,
-                    choice3=question.choice3, choice4=question.choice4)
+                    choice3=question.choice3, choice4=question.choice4, media_type=media_type)
             return 'Question not found!'
         else:
             return redirect(url_for('register'))
@@ -81,7 +84,9 @@ def answered():
 
 @app.route('/results', methods = ['GET'])
 def show_results():
-    users = db.query(User)
+    print('\n')
+    print('------------------------------------')
+    users = db.query(User).all()
     correct_answers = db.query(Question)
     
     first = None
@@ -96,10 +101,14 @@ def show_results():
     team_score = 0
 
     for user in users:
+        print("HEEEEEEeeereewsssdaddsdad")
         correct = 0
-        user_answers = db.query(Answer).filter_by(user_id=user.user_id)
+        user_answers = db.query(Answer).filter_by(user_id=user.user_id).all()
+        print(user_answers)
+        print(user)
         for answer in user_answers:
             question_answer = correct_answers.get({'question_id': answer.question_id})
+            print(question_answer)
             if (answer.answer == question_answer.answer):
                 correct += 1 
         if (correct >= first_score):
@@ -127,3 +136,6 @@ def show_results():
     return render_template('leaderboard.html', first_name=first_name, second_name=second_name, third_name=third_name,
         first_score=first_score, second_score=second_score, third_score=third_score, team_score=team_score, team_name=team_name)
 
+@app.route('/test', methods = ['GET'])
+def test():
+    return render_template('test.html')

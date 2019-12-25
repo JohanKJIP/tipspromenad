@@ -6,7 +6,13 @@
 <title>Tipspromenad</title>
 <h2>Fråga {{question_id}}</h2>
 {% if media %}
+{% if media_type == 'images' %}
 <img src="{{url_for('static', filename=media)}}" class="image"> 
+{% else %}
+<audio id="musicTesting" preload="auto" controls>  
+    <source src="{{ url_for('static', filename=media) }}" type="audio/wav" />
+</audio>
+{% endif %}
 {% endif %}
 <p>{{meta}}</p>
 <ul>

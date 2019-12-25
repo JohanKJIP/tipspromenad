@@ -1,1 +1,2 @@
-INSERT INTO question(meta, media, answer, choice1, choice2, choice3, choice4) VALUES ("I vilket land var bilden ovan troligtvis tagen?", "picture.png", 2, "Frankrike", "Tyskland", "Sverige", "USA");
+INSERT INTO question(meta, media, answer, choice1, choice2, choice3, choice4) VALUES ("I vilket land var bilden ovan troligtvis tagen?", "images/picture.png", 2, "Frankrike", "Tyskland", "Sverige", "USA");
+INSERT INTO question(meta, media, answer, choice1, choice2, choice3, choice4) VALUES ("Vad heter låten?", "audio/test.ogg", 4, "Hubba bubba", "Foo", "Bar", "Snickers");
