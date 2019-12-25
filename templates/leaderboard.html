@@ -6,19 +6,23 @@
 <title>Tipspromenad</title>
 <body style="background-color: white;">
     {% if team_name %}
-    <h1>Lag {{team_name}}'s poäng: {{team_score}}</h1>
+    <h1 style="color: cadetblue;">Ni fick {{team_score}} rätt ({{team_name}})</h1>
+    <hr>
     {% endif %}
-    <h1>Topplista</h1>
-    {% if first_name != "" %}
-    <img src="https://img.icons8.com/officel/80/000000/medal2.png">
-    <h2 class="gold">{{first_name}}: {{first_score}} poäng</h2>
-    {% endif %}
-    {% if second_name != "" %}
-    <img src="https://img.icons8.com/officel/40/000000/medal-second-place.png">
-    <h3 class="silver">{{second_name}}: {{second_score}} poäng</h3>
-    {% endif %}
-    {% if third_name != "" %}
-    <img src="https://img.icons8.com/officel/40/000000/medal2-third-place.png">
-    <h3 class="bronze">{{third_name}}: {{third_score}} poäng</h3>
-    {% endif %}
+    <div id="leaderboard">
+        <h1>Topplista</h1>
+        {% if first_name != "" %}
+        <img src="https://img.icons8.com/officel/80/000000/medal2.png">
+        <h2 class="gold">{{first_name}}: {{first_score}} poäng</h2>
+        {% endif %}
+        {% if second_name != "" %}
+        <img src="https://img.icons8.com/officel/40/000000/medal-second-place.png">
+        <h3 class="silver">{{second_name}}: {{second_score}} poäng</h3>
+        {% endif %}
+        {% if third_name != "" %}
+        <img src="https://img.icons8.com/officel/40/000000/medal2-third-place.png">
+        <h3 class="bronze">{{third_name}}: {{third_score}} poäng</h3>
+        {% endif %}
+    </div>
+    <hr>
 </body>

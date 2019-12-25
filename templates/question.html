@@ -1,18 +1,17 @@
 <!doctype html>
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 <script src="{{ url_for('static', filename='js/functions.js') }}"></script> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tipspromenad</title>
-<h1>Lag {{team_name}}</h1>
+<h2>Fråga {{question_id}}</h2>
 {% if media %}
 <img src="{{url_for('static', filename=media)}}" class="image"> 
 {% endif %}
-<h2>Fråga: {{question_id}}</h2>
 <p>{{meta}}</p>
 <ul>
-    <li onclick="send_answer('{{user_id}}', '{{question_id}}', '1')">{{choice1}}</li>
-    <li onclick="send_answer('{{user_id}}', '{{question_id}}', '2')">{{choice2}}</li>
-    <li onclick="send_answer('{{user_id}}', '{{question_id}}', '3')">{{choice3}}</li>
-    <li onclick="send_answer('{{user_id}}', '{{question_id}}', '4')">{{choice4}}</li>
+    <li onclick="send_answer('{{user_id}}', '{{question_id}}', '1')" class="question-choice">{{choice1}}</li>
+    <li onclick="send_answer('{{user_id}}', '{{question_id}}', '2')" class="question-choice">{{choice2}}</li>
+    <li onclick="send_answer('{{user_id}}', '{{question_id}}', '3')" class="question-choice">{{choice3}}</li>
+    <li onclick="send_answer('{{user_id}}', '{{question_id}}', '4')" class="question-choice">{{choice4}}</li>
 </ul>
