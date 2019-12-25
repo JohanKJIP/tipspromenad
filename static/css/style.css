@@ -63,3 +63,15 @@ input {
   line-height: 1.2;
   padding: 0 35px
 }
+
+.gold {
+  color: gold;
+}
+
+.silver {
+  color: silver;
+}
+
+.bronze {
+  color: #cc6633;
+}

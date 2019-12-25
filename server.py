@@ -7,6 +7,7 @@ from pappa.models import User, Question, Answer
 import json
 
 app = Flask(__name__, static_url_path='/static')
+# yes that is a password :)
 engine = create_engine(
     'mysql+mysqlconnector://root:korvar123@127.0.0.1:3306/pappa',
     echo=True)
