@@ -54,7 +54,6 @@ def show_question(question_id):
     question = db.query(Question).filter_by(question_id=question_id).first() 
     user_id = request.cookies.get('user_id')
     previous_answer = db.query(Answer).filter_by(question_id=question_id, user_id=user_id).first() 
-    print('Previous answer: ' + str(previous_answer) + '-------------------------s')
     if (previous_answer == None):
         user = db.query(User).filter_by(user_id=user_id).first() 
         if (user_id != None and user != None):
