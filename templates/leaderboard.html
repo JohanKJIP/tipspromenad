@@ -1,0 +1,19 @@
+<!doctype html>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<script src="{{ url_for('static', filename='js/functions.js') }}"></script> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tipspromenad</title>
+{% if team_name %}
+<h1>Lag {{team_name}}'s poäng: {{team_score}}</h1>
+{% endif %}
+<h1>Topplista</h1>
+{% if first_name != "" %}
+<h2>Vinnare: {{first_name}} - {{first_score}} poäng</h2>
+{% endif %}
+{% if second_name != "" %}
+<h3>Andra plats: {{second_name}} - {{second_score}} poäng</h3>
+{% endif %}
+{% if third_name != "" %}
+<h3>Tredje plats: {{third_name}} - {{third_score}} poäng</h3>
+{% endif %}

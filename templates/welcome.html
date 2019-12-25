@@ -1,0 +1,14 @@
+<!doctype html>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<script src="{{ url_for('static', filename='js/functions.js') }}"></script> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tipspromenad</title>
+<h1>Registrerat lag {{team_name}}</h1>
+<h2>Instruktioner:</h2>
+<p>Spela genom att hålla kameran framför varje frågas QR-kod, precis som ni gjorde för att registrera lag. Då får ni upp en fråga att svara på. När alla är klara med frågorna kommer vinnarlaget att presenteras.</p>
+<p>OBS. det går inte att ändra svar när man väl svarat!</p>
+
+<p>ps. så här ser en QR-kod ut</p>
+<img src="{{url_for('static', filename='exampleQr.png')}}" class="image" style="height:100px; width: 100px;"> 

@@ -1,0 +1,11 @@
+<!doctype html>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap" rel="stylesheet">  
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+<script src="{{ url_for('static', filename='js/functions.js') }}"></script> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tipspromenad</title>
+<h1>REGISTRERA LAG</h1>
+<form action="/welcome" method="POST">
+  <input type="text" name="team_name" class="input" placeholder="Lagnamn..."><br>
+  <input type="submit" value="Klar" class="button">
+</form> 
