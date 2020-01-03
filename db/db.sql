@@ -60,10 +60,10 @@ CREATE TABLE IF NOT EXISTS `pappa`.`Question` (
   `meta` VARCHAR(300) NOT NULL,
   `media` VARCHAR(50) NULL,
   `answer` INT NOT NULL,
-  `choice1` VARCHAR(45) NOT NULL,
-  `choice2` VARCHAR(45) NOT NULL,
-  `choice3` VARCHAR(45) NOT NULL,
-  `choice4` VARCHAR(45) NOT NULL,
+  `choice1` VARCHAR(150) NOT NULL,
+  `choice2` VARCHAR(150) NOT NULL,
+  `choice3` VARCHAR(150) NOT NULL,
+  `choice4` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`question_id`))
 ENGINE = InnoDB;
 
