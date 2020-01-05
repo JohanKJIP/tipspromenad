@@ -100,40 +100,35 @@ def show_results():
     team_name = None
     team_score = 0
 
-    if user_id != None:
-        for user in users:
-            print("HEEEEEEeeereewsssdaddsdad")
-            correct = 0
-            user_answers = db.query(Answer).filter_by(user_id=user.user_id).all()
-            print(user_answers)
-            print(user)
-            for answer in user_answers:
-                question_answer = correct_answers.get({'question_id': answer.question_id})
-                print(question_answer)
-                if (answer.answer == question_answer.answer):
-                    correct += 1 
-            # ugly
-            if (correct >= first_score):
+    for user in users:
+        correct = 0
+        user_answers = db.query(Answer).filter_by(user_id=user.user_id).all()
+        for answer in user_answers:
+            question_answer = correct_answers.get({'question_id': answer.question_id})
+            if (answer.answer == question_answer.answer):
+                correct += 1 
+        # ugly
+        if (correct >= first_score):
+            third = second
+            third_score = second_score
+            second = first
+            second_score = first_score
+            first = user
+            first_score = correct
+        else:
+            if (correct >= second_score):
                 third = second
                 third_score = second_score
-                second = first
-                second_score = first_score
-                first = user
-                first_score = correct
+                second = user
+                second_score = correct
             else:
-                if (correct >= second_score):
-                    third = second
-                    third_score = second_score
-                    second = user
-                    second_score = correct
-                else:
-                    if (correct >= third_score):
-                        third_score = correct
-                        third = user
+                if (correct >= third_score):
+                    third_score = correct
+                    third = user
 
-            if (user.user_id == user_id):
-                team_name = user.team_name
-                team_score = correct
+        if (user.user_id == user_id):
+            team_name = user.team_name
+            team_score = correct
 
     first_name = ""
     second_name = ""
